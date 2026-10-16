@@ -1,0 +1,21 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: payment-service
+
+  config:
+    import: optional:configserver:http://localhost:8888
+
+  data:
+    mongodb:
+      uri: mongodb+srv://uberclone:uberclone123@uber-clone.io20sgt.mongodb.net/uber_payments?retryWrites=true&w=majority&appName=uber-clone
+      database: uber_payments
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true

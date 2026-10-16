@@ -1,0 +1,8 @@
+server:
+  port: 8084
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://uberclone:uberclone123@uber-clone.io20sgt.mongodb.net/uber_payments?retryWrites=true&w=majority&appName=uber-clone
+      database: uber_payments

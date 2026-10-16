@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/api/users/**
+
+        - id: driver-service
+          uri: lb://driver-service
+          predicates:
+            - Path=/api/drivers/**
+
+        - id: ride-service
+          uri: lb://ride-service
+          predicates:
+            - Path=/api/rides/**
+
+        - id: payment-service
+          uri: lb://payment-service
+          predicates:
+            - Path=/api/payments/**

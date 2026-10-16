@@ -1,0 +1,21 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/configs   # configs stored locally in this project
+  profiles:
+    active: native                               # use local files, not Git (simpler for learning)
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/ # register with Eureka
+  instance:
+    prefer-ip-address: true
